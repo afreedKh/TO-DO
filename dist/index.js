@@ -13,9 +13,9 @@ const PORT = process.env.PORT;
 app.set('view engine', 'ejs');
 app.set("views", path_1.default.join(__dirname, 'views'));
 app.use(express_1.default.json());
-app.use(express_1.default.urlencoded());
-app.use(express_1.default.static(path_1.default.join(__dirname, './src/public')));
-app.use(express_1.default.static(path_1.default.join(__dirname, './dist/public')));
+app.use(express_1.default.urlencoded({ extended: true }));
+app.use(express_1.default.static(path_1.default.join(__dirname, '../src/public')));
+app.use(express_1.default.static(path_1.default.join(__dirname, '../dist/public')));
 app.use('/', router_1.default);
 app.listen(PORT, () => {
     console.log(`Server started at http://localhost:${PORT}`);
